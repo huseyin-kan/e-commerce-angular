@@ -1,0 +1,25 @@
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+   
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a routerLink="products" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="margin-right:0px !important;">
+        e-commerce
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="products" class="nav-link px-2 text-secondary"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li *ngFor="let nav of nav" ><a routerLink="products/category/{{nav.id}}" class="nav-link px-2 text-white">{{nav.name}}</a></li>
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search" [(ngModel)]="searchTerm" name="search" (input)="search($event)">
+      </form>
+
+      <div class="text-end" style="width: 120px; display: flex !important; justify-content:space-between !important;">
+        <a *ngIf="isLoggedIn()===true" routerLink="login" class="nav-link px-2 text-white">Log In</a>
+        <a *ngIf="isLoggedIn()===true" routerLink="/signup" class="nav-link px-2 text-white" >Sign Up</a>
+        <a *ngIf="isLoggedIn()===false" routerLink="products" (click)="logOut()" class="nav-link px-2 text-white">Log Out</a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,27 @@
+<div >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit the product</h4>
+          <button type="button" class="close" aria-label="Close" routerLink="/products"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="discountProduct" (submit)="setProduct()">
+            <div class="form-group">
+              <label style="margin:5px 0px ;"><strong>Current Price</strong></label>
+              <input type="number" class="form-control" id="price" placeholder="Price" name="price" formControlName="price">
+            </div>
+            <div class="form-group">
+              <label style="margin:5px 0px ;"><strong>Discounted Price</strong></label>
+              <input type="number" class="form-control" id="discount" placeholder="Discount Price" name="discount" formControlName="discount">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="removeDiscount()">Remove Discount</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

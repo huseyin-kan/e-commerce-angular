@@ -1,0 +1,55 @@
+<div >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit the product</h4>
+        <button type="button" class="close" aria-label="Close" routerLink="/products"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="productUpdateForm" (submit)="setProduct()">
+          <div class="form-group">
+            <label  style="margin:5px 0px ;"><strong>Product Name</strong></label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="User Name"  name="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label style="margin:5px 0px ;"><strong>Description</strong></label>
+            <input type="text" class="form-control" id="description" placeholder="Description" name="description" formControlName="description">
+          </div>
+          <div class="form-group">
+            <label style="margin:5px 0px ;"><strong>Price</strong></label>
+            <input type="number" class="form-control" id="price" placeholder="Price" name="price" formControlName="price">
+          </div>
+          <div class="form-group">
+            <label style="margin:5px 0px ;"><strong>Discount Price</strong></label>
+            <input type="number" class="form-control" id="discountPrice" placeholder="Discount Price" name="discountPrice" formControlName="discountPrice">
+          </div>
+          <div class="form-group">
+            <label style="margin:5px 0px ;"><strong>Ratio</strong></label>
+            <input type="number" class="form-control" id="ratio" placeholder="Ratio" name="ratio" formControlName="ratio">
+          </div>
+          <div class="form-group">
+            <label style="margin:5px 0px ;"><strong>Image Url</strong></label>
+            <input type="text" class="form-control" id="imageUrl" placeholder="Image Url" name="imageUrl" formControlName="imageUrl">
+          </div>
+          <div class="form-group" style="margin:30px 0px" >
+            <label style="margin:5px 0px"> <strong>Categories</strong></label>
+            <select class="form-select"  name="categoryId" id="categoryId" formControlName="categoryId">
+                <option *ngFor="let nav of nav" [value]="nav.id">{{nav.name}}</option>
+            </select>
+        </div>
+        <div class="form-group" style="margin:30px 0px">
+          <label style="margin:5px 0px"> <strong>Discount</strong></label>
+          <select class="form-select" name="isDiscounted" id="isDiscounted" formControlName="isDiscounted">
+              <option selected>false</option>
+              <option >true</option>
+          </select>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" routerLink="/products">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

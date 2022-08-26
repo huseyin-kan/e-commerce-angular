@@ -1,0 +1,22 @@
+.div{
+    display: flex;
+    height: 100%;
+
+}
+.category{
+    height: 100%;
+    width: 250px;
+}
+.product{
+    margin: 1rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    
+}
+.product::-webkit-scrollbar{
+    display: none;
+}
+
+

@@ -1,0 +1,36 @@
+<div class="row">
+  <div *ngFor="let product of products | filter:searchTerm" class="card"
+    style="width: 18rem; opacity: 0.9; border-radius: 10px;">
+    <div>
+      <button type="button" *ngIf="isLoggedIn()===true" class="dscbutton" routerLink="/discount/{{product.id}}" style="cursor: pointer !important;"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+      
+      
+    </div>
+    
+    <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title"><strong> {{product.name}}</strong></h4>
+      <p class="card-text" style="height: 25px !important; margin: 25px 0px !important;" >{{product.description}}</p>
+      
+      
+      <div class="d-flex">
+        <a class="buttons " *ngIf="product.isDiscounted==='true'" (click)="addToCart(product)" style="cursor: pointer !important;">{{product.discountPrice |
+          currency:'USD'}}
+          </a>
+        <a class="buttons "  *ngIf="product.isDiscounted==='false'" (click)="addToCart(product)" style="cursor: pointer !important;">{{product.price |
+          currency:'USD'}}
+          </a>
+        <button type="button" *ngIf="isLoggedIn()===true" class="updbutton" routerLink="/update-product-form/{{product.id}}" style="cursor: pointer !important;">Update</button>
+        <button type="button" data-hover="Discount" *ngIf="isLoggedIn()===true" class="dltbutton" (click)="deleteProduct(product)" style="cursor: pointer !important;">Delete</button>
+      </div>
+      <div class="discount-head">
+        <div class="discount">
+          <span *ngIf="product.isDiscounted==='true'" class="discount-price">{{product.price |
+            currency:'USD'}}</span>
+          <span *ngIf="product.isDiscounted==='true'" class="discount-ratio">%{{product.ratio}}</span>
+         </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

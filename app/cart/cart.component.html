@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                    <div class="col align-self-center text-right text-muted">{{products.length}} items</div>
+                </div>
+            </div>    
+            <div class="row border-top border-bottom" *ngFor="let product of products; let i =index">
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid" src="{{product.imageUrl}}"></div>
+                    <div class="col">
+                        <div class="row text-muted">{{product.name}}</div>
+                        <div class="row">{{product.description}}</div>
+                    </div>
+                    <div class="col">
+                        <a href="#">-</a><a href="#" class="border">{{product.quantity}}</a><a href="#">+</a>
+                    </div>
+                    <div class="col" *ngIf="product.isDiscounted==='true'"> {{product.discountPrice}}&dollar; <a class="close" (click)="removeItem(product)">&#10005;</a></div>
+                    <div class="col" *ngIf="product.isDiscounted==='false'"> {{product.price}}&dollar; <a class="close" (click)="removeItem(product)">&#10005;</a></div>
+                </div>
+            </div>
+            
+                <div class="back-to-shop"><a routerLink="/products">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+                <div class="btn" (click)="removeAllItems()" >Remove All Items</div>
+        </div>
+        <div class="col-md-4 summary">
+            <div><h5><b>Summary</b></h5></div>
+            <hr>
+            <div class="row">
+                <div class="col" style="padding-left:0;">ITEMS 3</div>
+                <div class="col text-right">{{grandTotal}} &dollar;</div>
+            </div>
+            <form>
+                <p>SHIPPING</p>
+                <select><option class="text-muted">Standard-Delivery- &euro;5.00</option></select>
+                <p>GIVE CODE</p>
+                <div class="input">
+                    <input id="code" placeholder="Enter your code" class="code" >
+                    <button type="button" class="but" (click)="enterCode()">Submit Code</button>
+
+                </div>
+                
+            </form>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL PRICE</div>
+                <div class="col text-right">{{grandTotal}} &dollar;</div>
+            </div>
+            <button class="btn" [disabled]="isLoggedIn()===false" (click)="getCartItems()" routerLink="/products">CHECKOUT</button>
+            <p *ngIf="isLoggedIn()===false" class="mb-0">You have to login<a routerLink="/clogin" class="text-black-50 fw-bold">Go to login panel for customer</a>
+            </p>
+        </div>
+    </div>
+    
+</div>

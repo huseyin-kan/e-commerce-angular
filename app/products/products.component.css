@@ -1,0 +1,117 @@
+.card{
+    margin:3px;
+}
+img{
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+    
+}
+.buttons{
+    border: 1px solid black;
+    display: flex;
+    background-color: #212529;
+    color: white;
+    width: 40%;
+    padding: 14px 25px;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 4px 4px 10px #747474;
+    transition: background-color 0.3s,
+    color 0.3s;
+}
+.buttons:hover{
+    background-color: white;
+    color: #212529;
+}
+
+.updbutton{
+    border: 1px solid #32ff7e;
+    display: flex;
+    background-color: #32ff7e ;
+    color: white;
+    width: 25%;
+    padding: 14px 25px;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s,
+    color 0.3s;
+
+}
+
+.dltbutton{
+    border: 1px solid #ff3838;
+    display: flex;
+    background-color: #ff3838;
+    color: white;
+    width: 25%;
+    padding: 14px 25px;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-decoration: none;
+    
+    transition: background-color 0.3s,
+    color 0.3s;
+
+}
+.updbutton:hover{
+    background-color: white;
+    color: #32ff7e;
+}
+.dltbutton:hover{
+    background-color: white;
+    color: #ff3838;
+}
+
+.dscbutton{
+    display: flex;
+    width: 10%;
+    float: right;
+    padding: 3px 0px;
+    border: 1px solid #3330E4;
+    background-color: #3330E4;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    transition: opacity 0.3s;
+}
+
+
+.dscbutton:hover{
+    opacity: 0.8;
+}
+
+.discount-ratio{
+margin-left: 9px;
+}
+
+.discount-price{
+    text-decoration: line-through;
+}
+.discount{
+    width: 100px;
+    display: inline-block;
+    background-color: #C9D6DF;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    opacity: 0.7;
+    box-shadow:  3px 3px 10px #c0c0c0;
+
+}
+
+.discount-head{
+    margin:4px 0px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

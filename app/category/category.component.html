@@ -1,0 +1,49 @@
+<html>
+    <body>
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark " style="width: 250px; height: 100%;">
+          <a routerLink="/profile" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" >
+            <img src="{{image}}" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>{{userName}}</strong>
+          </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item" style="display:flex; justify-content:space-between; align-items:center;">
+                <a routerLink="cart" class="nav-link text-white" aria-current="page">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    Your Cart
+                </a>
+                <span *ngIf="isAdded()" class="badge bg-danger">{{totalItem}}</span>
+              </li>
+              <li class="nav-item">
+                <a routerLink="add-product-form1" class="nav-link text-white" routerLink="orders/{{customerId}}" aria-current="page" *ngIf="isCustomerLogged()===false">
+                  <i class="fa fa-truck" aria-hidden="true"></i>
+                    Orders
+                </a>
+              </li>
+              
+
+              
+              <li class="nav-item">
+                <a routerLink="add-product-form1" class="nav-link text-white" aria-current="page"  *ngIf="isAdminLogged()===false">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add Product
+                </a>
+              </li>
+              <li>
+                <a routerLink="products" class="nav-link text-white" *ngIf="isAdminLogged()===false">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                  Update Products
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white" *ngIf="isAdminLogged()===false">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  Delete Products
+                </a>
+              </li>
+            </ul>
+            <hr>
+          </div>
+    </body>
+</html>
+

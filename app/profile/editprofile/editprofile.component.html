@@ -1,0 +1,50 @@
+<div >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Profile</h4>
+          <button type="button" class="close" aria-label="Close" routerLink="/products"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editForm" (submit)="setCustomer()">
+            <div class="form-group">
+              <label  style="margin:5px 0px ;"><strong>User Name</strong></label>
+              <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="User Name"  name="userName"  formControlName="userName">
+            </div>
+            <div class="form-group">
+              <label  style="margin:5px 0px ;"><strong>Password</strong></label>
+              <div class="input-group">
+                <input [type]="passwordType" class="form-control" id="password" aria-describedby="emailHelp" placeholder="password"  name="password"  formControlName="password"> 
+                <button type="button" class="visible" (click)="passwordShow()"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+              </div>
+               
+            </div>
+            <div class="form-group">
+              <label style="margin:5px 0px ;"><strong>Name</strong></label>
+              <input type="text" class="form-control" id="name" placeholder="Name" name="name" formControlName="name">
+            </div>
+            <div class="form-group">
+              <label style="margin:5px 0px ;"><strong>Phone Number</strong></label>
+              <input type="number" class="form-control" id="phone" placeholder="Phone Number" name="phone" formControlName="phone">
+            </div>
+            <div class="form-group">
+              <label style="margin:5px 0px ;"><strong>Image Url</strong></label>
+              <input type="text" class="form-control" id="imageUrl" placeholder="Image Url" name="imageUrl" formControlName="imageUrl">
+            </div>
+            <div class="form-group" style="margin:30px 0px" >
+              <label style="margin:5px 0px"> <strong>Email</strong></label>
+              <input type="text" class="form-control" id="email" placeholder="Email" name="email" formControlName="email">
+          </div>
+          <div class="form-group" style="margin:30px 0px" >
+            <label style="margin:5px 0px"> <strong>Address</strong></label>
+            <input type="text" class="form-control" id="address" placeholder="Address" name="address" formControlName="address">
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" routerLink="/products">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

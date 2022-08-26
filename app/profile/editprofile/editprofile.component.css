@@ -1,0 +1,11 @@
+.visible{
+    border-top-width: 0.6px;
+    border-right-width: 0.6px;
+    border-bottom-width: 0.6px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: white;
+}
+.visible:hover{
+    background-color: rgb(200, 203, 205);
+}

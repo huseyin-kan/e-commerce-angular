@@ -1,0 +1,51 @@
+<section class="vh-100 gradient-custom">
+  <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+                <p class="text-white-50 mb-5">Create an Account</p>
+  
+                <div class="form-outline form-white mb-4">
+                  <input  formControlName="userName"  type="text" id="userName" name="userName" class="form-control form-control-lg" placeholder="Username"/>
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                  <input formControlName="password" name="password"  type="password" id="password" class="form-control form-control-lg" placeholder="Password"/>
+                </div> 
+                <div class="form-outline form-white mb-4">
+                  <input formControlName="name" name="name"  type="text" id="name" class="form-control form-control-lg" placeholder="Name"/>
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <input formControlName="phone" name="phone"  type="number" id="phone" class="form-control form-control-lg" placeholder="Phone Number"/>
+                </div>
+               
+                <div class="form-outline form-white mb-4">
+                  <input formControlName="address" name="address"  type="text" id="address" class="form-control form-control-lg" placeholder="Address"/>
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <input formControlName="email" name="email"  type="text" id="email" class="form-control form-control-lg" placeholder="Email"/>
+                </div>
+  
+                <hr>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
+  
+              </div>
+              <div>
+                <p class="mb-0">You have already an account? <a routerLink="/clogin" class="text-white-50 fw-bold">Login</a>
+                </p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+    
+  </section>
